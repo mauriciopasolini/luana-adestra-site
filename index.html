@@ -854,6 +854,184 @@
 
     /* WhatsApp icon inline */
     .wpp-icon { flex-shrink: 0; }
+
+    /* ── BOTÃO PLANOS (outline) ── */
+    .btn-planos {
+      background: transparent;
+      color: var(--verde);
+      border: 2px solid var(--verde);
+      padding: 0.65rem 1.5rem;
+      border-radius: 50px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .btn-planos:hover {
+      background: var(--verde);
+      color: #fff;
+    }
+
+    /* ── PLANOS ── */
+    .planos {
+      background: var(--bege);
+    }
+
+    .planos-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .planos-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .planos-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.6rem 2rem;
+      border-radius: 50px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      border: 2px solid var(--verde);
+      background: transparent;
+      color: var(--verde);
+    }
+
+    .tab-btn.active {
+      background: var(--verde);
+      color: #fff;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .planos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .plano-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.6rem;
+      box-shadow: 0 2px 16px rgba(74,55,40,0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 2px solid transparent;
+    }
+
+    .plano-card.destaque {
+      border: 3px solid var(--verde);
+    }
+
+    .plano-badge-top {
+      display: inline-block;
+      background: rgba(138,158,122,0.15);
+      color: var(--verde-dark);
+      border-radius: 50px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      align-self: flex-start;
+    }
+
+    .plano-badge-destaque {
+      display: inline-block;
+      background: var(--verde);
+      color: #fff;
+      border-radius: 50px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    .plano-nome {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--texto);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .plano-preco-principal {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--texto);
+      line-height: 1;
+    }
+
+    .plano-preco-principal small {
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .plano-preco-secundario {
+      font-size: 0.88rem;
+      color: #b0a090;
+      margin-top: 0.3rem;
+    }
+
+    .btn-plano {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--verde);
+      color: #fff;
+      border-radius: 50px;
+      padding: 0.75rem 1.5rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background 0.25s, transform 0.2s;
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-plano:hover {
+      background: var(--verde-dark);
+      transform: translateY(-1px);
+    }
+
+    .planos-nota {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #9b8878;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .planos-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .planos-grid { grid-template-columns: 1fr; }
+      .header-actions .btn-planos { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -861,6 +1039,7 @@
   <!-- HEADER -->
   <header id="header">
     <div class="header-actions">
+      <a href="#planos" class="btn-planos">Planos</a>
       <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços!" target="_blank" rel="noopener" class="btn-whatsapp">
         <svg class="wpp-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Agendar pelo WhatsApp
@@ -875,6 +1054,7 @@
   <nav class="mobile-menu" id="mobileMenu" aria-label="Navegação mobile">
     <a href="#sobre" onclick="closeMobileMenu()">Sobre a Luana</a>
     <a href="#servicos" onclick="closeMobileMenu()">Serviços</a>
+    <a href="#planos" onclick="closeMobileMenu()">Planos</a>
     <a href="#diferenciais" onclick="closeMobileMenu()">Diferenciais</a>
     <a href="#funcionamento" onclick="closeMobileMenu()">Funcionamento</a>
     <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços!" target="_blank" rel="noopener" class="btn-whatsapp" onclick="closeMobileMenu()">
@@ -1018,6 +1198,94 @@
           Quero saber mais
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section id="planos" class="planos">
+    <div class="planos-inner">
+      <div class="planos-header fade-up">
+        <p class="section-label">Transparência nos valores</p>
+        <h2 class="section-title">Nossos Planos</h2>
+        <p style="color: var(--verde); font-weight: 700; font-size: 1rem; margin-top: 0.5rem;">Escolha o plano ideal para o seu cão</p>
+      </div>
+      <div class="planos-tabs fade-up">
+        <button class="tab-btn active" onclick="switchTab('consultoria')">Consultoria</button>
+        <button class="tab-btn" onclick="switchTab('creche')">Creche</button>
+      </div>
+
+      <!-- Tab Consultoria -->
+      <div class="tab-panel active" id="tab-consultoria">
+        <div class="planos-grid">
+          <div class="plano-card fade-up">
+            <span class="plano-badge-top">4 aulas</span>
+            <p class="plano-nome">Plano Lobo</p>
+            <div>
+              <p class="plano-preco-principal"><small>R$</small> 850 <small style="font-size:0.85rem;">à vista</small></p>
+              <p class="plano-preco-secundario">ou R$ 930 parcelado</p>
+            </div>
+            <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20tenho%20interesse%20no%20Plano%20Lobo%20de%20Consultoria!" target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+          </div>
+          <div class="plano-card destaque fade-up">
+            <span class="plano-badge-destaque">Mais escolhido</span>
+            <span class="plano-badge-top">8 aulas</span>
+            <p class="plano-nome">Plano Matilha</p>
+            <div>
+              <p class="plano-preco-principal"><small>R$</small> 1.500 <small style="font-size:0.85rem;">à vista</small></p>
+              <p class="plano-preco-secundario">ou R$ 1.600 parcelado</p>
+            </div>
+            <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20tenho%20interesse%20no%20Plano%20Matilha%20de%20Consultoria!" target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+          </div>
+          <div class="plano-card fade-up">
+            <span class="plano-badge-top">12 aulas</span>
+            <p class="plano-nome">Plano Alfa</p>
+            <div>
+              <p class="plano-preco-principal"><small>R$</small> 2.000 <small style="font-size:0.85rem;">à vista</small></p>
+              <p class="plano-preco-secundario">ou R$ 2.200 parcelado</p>
+            </div>
+            <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20tenho%20interesse%20no%20Plano%20Alfa%20de%20Consultoria!" target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+          </div>
+        </div>
+        <p class="planos-nota">Consultoria avulsa: R$ 250 presencial · R$ 200 online via Google Meet</p>
+      </div>
+
+      <!-- Tab Creche -->
+      <div class="tab-panel" id="tab-creche">
+        <div class="planos-grid">
+          <div class="plano-card fade-up">
+            <span class="plano-badge-top">Trimestral</span>
+            <p class="plano-nome">Plano Lobo</p>
+            <div>
+              <p class="plano-preco-principal"><small>R$</small> 560<small>/mês</small></p>
+              <p class="plano-preco-secundario">R$ 1.680 no trimestre · R$ 70/dia</p>
+            </div>
+            <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20tenho%20interesse%20no%20Plano%20Lobo%20de%20Creche!" target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+          </div>
+          <div class="plano-card destaque fade-up">
+            <span class="plano-badge-destaque">Mais econômico</span>
+            <span class="plano-badge-top">Semestral</span>
+            <p class="plano-nome">Plano Matilha</p>
+            <div>
+              <p class="plano-preco-principal"><small>R$</small> 520<small>/mês</small></p>
+              <p class="plano-preco-secundario">R$ 3.120 no semestre · R$ 65/dia</p>
+            </div>
+            <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20tenho%20interesse%20no%20Plano%20Matilha%20de%20Creche!" target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+          </div>
+          <div class="plano-card fade-up">
+            <span class="plano-badge-top">Anual</span>
+            <p class="plano-nome">Plano Alfa</p>
+            <div>
+              <p class="plano-preco-principal"><small>R$</small> 440<small>/mês</small></p>
+              <p class="plano-preco-secundario">R$ 5.280 no ano · R$ 55/dia</p>
+            </div>
+            <a href="https://wa.me/5554996881927?text=Olá%20Luana%2C%20tenho%20interesse%20no%20Plano%20Alfa%20de%20Creche!" target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+          </div>
+        </div>
+        <div class="planos-nota">
+          <p>Diária avulsa: R$ 80 · Dois ou mais animais: R$ 75 cada</p>
+          <p>Todos os pacotes equivalem a 2 dias de creche por semana · Animais devem estar com vacinas, antiparasitários e vermífugos em dia</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1259,6 +1527,13 @@
         hamburger.click();
       }
     });
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+      document.querySelector(`.tab-btn[onclick="switchTab('${tab}')"]`).classList.add('active');
+      document.getElementById(`tab-${tab}`).classList.add('active');
+    }
 
     function closeMobileMenu() {
       mobileMenu.classList.remove('open');
